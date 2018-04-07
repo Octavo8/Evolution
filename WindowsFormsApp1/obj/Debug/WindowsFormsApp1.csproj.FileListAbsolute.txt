@@ -1,0 +1,12 @@
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\bin\Debug\Evolution.dll
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\bin\Debug\Evolution.pdb
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+c:\users\kritzingerda\Source\Repos\ConsoleApp2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
