@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operators\Add.cs" />
+    <Compile Include="Comparators\BiggerThan.cs" />
+    <Compile Include="Brain.cs" />
+    <Compile Include="Inputs\Constant.cs" />
+    <Compile Include="Operators\Divide.cs" />
+    <Compile Include="Neuron.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Decision.cs" />
+    <Compile Include="Comparators\Equals.cs" />
+    <Compile Include="Mutations\Extensions.cs" />
+    <Compile Include="Stats\GenerationStat.cs" />
+    <Compile Include="Inputs\GoalX.cs" />
+    <Compile Include="Inputs\GoalY.cs" />
+    <Compile Include="Interfaces\IComparator.cs" />
+    <Compile Include="Interfaces\IInput.cs" />
+    <Compile Include="Interfaces\InputTypes.cs" />
+    <Compile Include="Interfaces\IOperator.cs" />
+    <Compile Include="Inputs\MemorySpace.cs" />
+    <Compile Include="Operators\Multiply.cs" />
+    <Compile Include="Inputs\MyX.cs" />
+    <Compile Include="Inputs\MyY.cs" />
+    <Compile Include="Comparators\NotEquals.cs" />
+    <Compile Include="Comparators\SmallerThan.cs" />
+    <Compile Include="Enums\Strategies.cs" />
+    <Compile Include="Operators\Subtract.cs" />
+  </ItemGroup>
+</Project>

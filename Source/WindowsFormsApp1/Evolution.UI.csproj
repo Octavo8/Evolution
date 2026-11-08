@@ -90,8 +90,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Evolution\Evolution.csproj">
-      <Project>{120a6306-8f63-46c7-8aa7-5797a65476b5}</Project>
+    <ProjectReference Include="..\Evolution\Evolution\Evolution.csproj">
+      <Project>{6e8c1a71-b632-beee-3a90-0f10bd99bae5}</Project>
       <Name>Evolution</Name>
     </ProjectReference>
   </ItemGroup>

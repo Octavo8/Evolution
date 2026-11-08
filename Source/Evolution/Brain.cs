@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Evolution
 {
@@ -14,7 +15,8 @@ namespace Evolution
     /// 
     /// Decisons on how to move are taken by comparing memory spaces to each other in various ways
     /// </summary>
-    [Serializable, DataContract]
+    [Serializable]
+    [DataContract]
     public class Brain
     {
 

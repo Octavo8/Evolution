@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Evolution
 {
@@ -401,18 +402,43 @@ namespace Evolution
 
         public void SaveGeneration(string filepath)
         {
-            Stream streamWriter = File.OpenWrite(filepath);
-            BinaryFormatter serialiser = new BinaryFormatter();
-            serialiser.Serialize(streamWriter, Generation);
-            streamWriter.Close();
+            try
+            {
+                using (var stream = File.OpenWrite(filepath))
+                {
+                    var options = new JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                        ReferenceHandler = ReferenceHandler.Preserve
+                    };
+                    JsonSerializer.Serialize(stream, Generation, options);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error saving generation: {ex.Message}");
+            }
         }
 
         public void LoadGeneration(string filepath)
         {
-            Stream stream = File.OpenRead(filepath);
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
-            Generation = (List<Brain>)binaryFormatter.Deserialize(stream);
-            stream.Close();
+            try
+            {
+                using (var stream = File.OpenRead(filepath))
+                {
+                    var options = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true,
+                        ReferenceHandler = ReferenceHandler.Preserve
+                    };
+                    Generation = JsonSerializer.Deserialize<List<Brain>>(stream, options);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading generation: {ex.Message}");
+                Generation.Clear();
+            }
         }
 
         #endregion File IO
