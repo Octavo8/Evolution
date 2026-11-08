@@ -3,7 +3,5 @@
 ################################################################################
 
 .vs/
-bin/
-obj/
-/Source/Evolution/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-/Source/WindowsFormsApp1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+**/bin/
+**/obj/
