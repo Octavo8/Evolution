@@ -2,4 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/Evolution/CopilotIndices/18.9.1329.3188/SemanticSymbols.db
+.vs/
+bin/
+obj/
