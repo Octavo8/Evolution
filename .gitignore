@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Source/.vs/Evolution
+/Source/Evolution/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
+/Source/Evolution/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/Source/Evolution/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Source/Evolution/obj/Debug/Evolution.csproj.AssemblyReference.cache
+/Source/Evolution/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
+/Source/Evolution/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/Source/Evolution/obj/Release/Evolution.csproj.AssemblyReference.cache
+/Source/WindowsFormsApp1/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
+/Source/WindowsFormsApp1/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/Source/WindowsFormsApp1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Source/WindowsFormsApp1/obj/Debug/Evolution.UI.csproj.AssemblyReference.cache
+/Source/WindowsFormsApp1/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+/Source/WindowsFormsApp1/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
+/Source/WindowsFormsApp1/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/Source/WindowsFormsApp1/obj/Release/Evolution.UI.csproj.AssemblyReference.cache
