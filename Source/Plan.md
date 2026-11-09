@@ -27,7 +27,7 @@ Given that direction, the safest plan is to separate concerns first, then migrat
 Target architecture (incremental end state):
 
 Evolution.Core (modern .NET class library): domain model + simulation engine
-Evolution.Infrastructure (optional, or kept inside core initially): persistence and serialization adapters
+Evolution.Infrastructure: persistence and serialization adapters
 Evolution.App.Wpf (modern .NET WPF desktop app): MVVM-based UI
 Evolution.SmokeTests (minimal test project): deterministic and end-to-end smoke checks
 Core behavior constraints to preserve:
@@ -74,17 +74,17 @@ Legacy .NET Framework/WinForms projects archived or removed from active solution
 Last Updated: 2026-11-08 20:38:16
 
 📝 Plan Steps
-Create a modernization branch and capture baseline behavior — run the current WinForms app and document reference outputs (score distribution shape, winner/median/loser examples, generation progression after 1 and 25 evolves) for later parity checks.
-Stand up a new SDK-style solution structure — add modern .NET projects (Evolution.Core, Evolution.App.Wpf, Evolution.SmokeTests) alongside legacy projects to enable side-by-side migration.
-Port domain primitives into Evolution.Core — migrate Brain, Neuron, Decision, enums/interfaces, and input/operator/comparator types with behavior-preserving logic and explicit nullable/visibility cleanup only where non-behavioral.
-Refactor engine orchestration out of Controller — split responsibilities into focused services (generation creation, step simulation, evolution, scoring, state updates) while preserving algorithm order and constants.
-Replace reflection-based discovery with explicit registries — define ordered factories for inputs/operators/comparators to remove runtime-order instability and make behavior deterministic across runtimes.
-Replace BinaryFormatter persistence with DTO JSON serialization — implement versioned save/load models for population and generation stats; remove binary clone hacks by introducing explicit deep-copy mechanics.
-Add baseline smoke tests before UI completion — cover create/step/evolve/save-load flows with fixed seeds and assert non-null, count, monotonicity, and bounded score-distribution invariants.
-Build WPF shell with MVVM — implement commands for “Create Population”, “Evolve 1”, “Evolve 25”, “Simulate Individuals”, and generation selection; bind to core services rather than direct drawing calls.
-Reimplement visualizations in WPF controls — port the current brain text panels, step simulation view, and histogram chart from GDI drawing to retained-mode WPF rendering (Canvas/ItemsControl + data templates).
-Wire persistence and session workflow in WPF — replace population.bin workflow with JSON save/load, defaulting to an app-data file path and adding explicit error handling and status feedback.
-Perform parity validation and tuning — compare WPF/core outcomes against baseline snapshots for representative runs, then adjust only non-functional differences (formatting/layout/perf) until parity is acceptable.
-Decommission legacy projects safely — remove WinForms project from startup, archive or delete .NET Framework projects, update solution configuration, and keep migration notes for future enhancements.
-Add lightweight CI for smoke checks — configure build + smoke test execution on push/PR to protect the rewritten core and WPF app from regression.
-Produce final upgrade documentation — include architecture overview, run instructions, save format details, known intentional deviations, and a short roadmap for post-migration improvements.
+1. Add a new project to the evolution solution that targets .Net 8.0 and is structured as a modern SDK-style project. This will serve as the foundation for the modernization effort.
+2. Add a new WPF project to the solution that targets .Net 8.0 and is structured as a modern SDK-style project. This will serve as the foundation for the modernization effort.
+3. Port domain primitives into Evolution.Core — Migrate all enums and Interfaces
+4. Port core engine into Evolution.Core — Migrate all Comparators and Inputs
+5. Port core engine into Evolution.Core — Migrate all Operators and Mutations
+6. Port core engine into Evolution.Core — Migrate all Brain, Neuron, Decision, and Controller logic
+7. Port core engine into Evolution.Core — Migrate all Stats
+8. Refactor engine orchestration out of Controller — split responsibilities into focused services (generation creation, step simulation, evolution, scoring, state updates) while preserving algorithm order and constants.
+9. Replace reflection-based discovery with explicit registries — define ordered factories for inputs/operators/comparators to remove runtime-order instability and make behavior deterministic across runtimes.
+10. Replace BinaryFormatter persistence with DTO JSON serialization — implement versioned save/load models for population and generation stats; remove binary clone hacks by introducing explicit deep-copy mechanics.
+11. Build WPF shell with MVVM — implement commands for “Create Population”, “Evolve 1”, “Evolve 25”, “Simulate Individuals”, and generation selection; bind to core services rather than direct drawing calls.
+12. Reimplement visualizations in WPF controls — port the current brain text panels, step simulation view, and histogram chart from GDI drawing to retained-mode WPF rendering (Canvas/ItemsControl + data templates).
+13. Wire persistence and session workflow in WPF — replace population.bin workflow with JSON save/load, defaulting to an app-data file path and adding explicit error handling and status feedback.
+14. Produce final upgrade documentation — include architecture overview, run instructions, save format details, known intentional deviations, and a short roadmap for post-migration improvements.
